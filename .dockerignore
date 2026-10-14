@@ -1,0 +1,11 @@
+# Keep the build context small and deterministic.
+# node_modules on the host is ~200MB of the wrong-platform binaries; the image
+# runs `npm ci` itself from the committed lockfile, so it must never be copied in.
+node_modules/
+dist/
+.git/
+.gitignore
+.vite/
+README.placeholder.md
+npm-debug.log*
+*.log
